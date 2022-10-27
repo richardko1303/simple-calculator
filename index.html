@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+    <div class="wrapper">
+        <div class="content">
+
+            <input type="number" id="input-num1" placeholder="27">
+            <input type="number" id="input-num2" placeholder="4"> <span style="color: white;">=</span>
+            <input type="number" id="answer" placeholder="" disabled>
+            <br>
+            
+            <div class="buttons">
+                <button id="calc-btn" onclick="calc('+')">+</button>
+                <button id="calc-btn" onclick="calc('-')">−</button>
+                <button id="calc-btn" onclick="calc('*')">×</button>
+                <button id="calc-btn" onclick="calc('/')">÷</button>
+            </div>
+
+        </div>
+    </div>
+    
+</body>
+
+<script>
+
+
+    function calc(operation) {
+        const num1 = parseFloat(document.getElementById('input-num1').value);
+        const num2 = parseFloat(document.getElementById('input-num2').value);
+        // const answer = document.getelementById('answer');
+        let result;
+
+        if (operation === '+') {
+            result = num1 + num2;
+        } else if (operation === '-') {
+            result = num1 - num2;
+        } else if (operation === '*') {
+            result = num1 * num2;
+        } else if (operation === '/') {
+            result = num1 / num2;
+        } else {
+            result = 'Error';
+        }
+        
+        document.getElementById("answer").placeholder = result;
+    }
+</script>
+
+</html>
